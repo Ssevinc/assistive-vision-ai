@@ -9,11 +9,11 @@ A real-time object and text detection system built with YOLOv8 to help visually 
 - [Project Structure](#project-structure)
 - [Dataset](#dataset)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Model Training](#model-training)
-- [Demo](#demo)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
+- [Usage](#usage) (tba)
+- [Model Training](#model-training) (tba)
+- [Demo](#demo) (tba)
+- [Roadmap](#roadmap) (tba)
+- [Contributing](#contributing) (tba)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -53,6 +53,8 @@ The system provides **real-time audio feedback** to alert users of important sur
 - Annotating bounding boxes for target classes
 - Automatically splitting into train/validation/test sets
 - Exporting in YOLO-compatible format
+
+Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6sm4)
 
 - **Audio Output:** pyttsx   
 - **Model Management:** Git LFS (for large files)
