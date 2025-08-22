@@ -61,6 +61,12 @@ Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6s
 
 - **Deployment:** (Planned) Streamlit / Mobile App
 
+## Experiment History
+- **v1**: Trained on Roboflow dataset only → struggled with real-world night videos.  
+- **v2**: Added 200 custom images (night scenes, occlusions) → improved recall on traffic lights.  
+- **v3 (final)**: Combined 1500 images total, tuned augmentations → achieved mAP50 0.91, robust across varied conditions.
+
+
 ---
 
 ## 🚀 Installation
