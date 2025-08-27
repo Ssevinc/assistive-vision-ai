@@ -1,0 +1,19 @@
+names:
+- crosswalk
+- green_light
+- red_light
+- seating
+- shelter
+- stairs
+- trash_can
+- yellow_light
+nc: 8
+roboflow:
+  license: CC BY 4.0
+  project: dataset-z6sm4
+  url: https://universe.roboflow.com/seyyide/dataset-z6sm4/dataset/5
+  version: 5
+  workspace: seyyide
+test: ../test/images
+train: ../train/images
+val: ../valid/images
