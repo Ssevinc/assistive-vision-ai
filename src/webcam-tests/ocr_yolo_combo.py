@@ -5,7 +5,7 @@ import numpy as np
 import subprocess
 from ultralytics import YOLO
 
-# ---- CONFIG ----
+
 KEYWORDS = {"wc", "exit", "toilet", "market", "hospital"}   # OCR keywords
 YOLO_COCO_TARGET_CLASSES = {"traffic light", "bench"}       # from pretrained YOLO
 YOLO_CONF_THRESH = 0.7
@@ -13,14 +13,14 @@ OCR_CONF_THRESH = 0.6
 FRAME_SKIP = 5
 COOLDOWN_SEC = 20.0
 
-IGNORED_CUSTOM_CLASSES = {"yellow light"}  # 👈 skip this class in custom model
+IGNORED_CUSTOM_CLASSES = {"yellow light"} # ignored because performs poorly
 
-# ---- OCR ----
+
 reader = easyocr.Reader(['en'], gpu=False)
 
 # ---- YOLO MODELS ----
 coco_model = YOLO("yolo-Weights/yolov8n.pt")                  # pretrained COCO
-custom_model = YOLO("/Users/s.sevinc/visual-assistant/models/best.pt")      # your trained model
+custom_model = YOLO("/Users/s.sevinc/visual-assistant/models/best.pt")      #trained model
 coco_class_names = coco_model.names
 custom_class_names = custom_model.names
 
@@ -29,10 +29,10 @@ def say(msg: str, voice="Samantha"):
     subprocess.run(["/usr/bin/say", "-v", voice, "-o", "/tmp/tts.aiff", msg])
     subprocess.run(["afplay", "/tmp/tts.aiff"])
 
-# ---- STATE ----
+
 last_seen = {}
 
-# ---- CAMERA ----
+
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     raise RuntimeError("Could not open camera.")
@@ -99,7 +99,7 @@ while True:
                 last_seen[label] = now
                 found_now.add(label)
 
-    # --- YOLO CUSTOM (skip unwanted classes) ---
+    # --- YOLO CUSTOM (previously trained model with cutom dataset)---
     custom_results = custom_model(frame_small, stream=True)
     for r in custom_results:
         for box in r.boxes:
@@ -110,7 +110,7 @@ while True:
             label = custom_class_names[cls_id]
 
             if label in IGNORED_CUSTOM_CLASSES:
-                continue  # 👈 skip yellow light
+                continue 
 
             # draw
             x1, y1, x2, y2 = map(int, box.xyxy[0])
@@ -143,7 +143,6 @@ while True:
                     cv2.FONT_HERSHEY_DUPLEX, 0.8, (0,255,0), 2)
         say(msg)
 
-    # --- Show ---
     cv2.imshow("Webcam OCR+YOLO (multi-model, filtered)", frame_small)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

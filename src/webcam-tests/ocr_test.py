@@ -5,25 +5,21 @@ import numpy as np
 import os
 
 # ---- CONFIG ----
-KEYWORDS = {"wc", "exit", "toilet", "market", "hospital", "seyyide"}
+KEYWORDS = {"wc", "exit", "toilet", "market", "hospital"}
 FRAME_SKIP = 5
 COOLDOWN_SEC = 3.0
 CONF_THRESH = 0.6
 
-# ---- OCR ----
-# gpu=False because you're on macOS without CUDA (MPS not fully supported by EasyOCR yet)
+
 reader = easyocr.Reader(['en','tr'], gpu=False)
 
 # ---- macOS TTS ----
 import subprocess
 
 def say(msg: str, voice: str = "Samantha"):
-    # Generate temporary audio file with macOS TTS
     subprocess.run(["/usr/bin/say", "-v", voice, "-o", "temp.aiff", msg])
-    # Play it
     subprocess.run(["afplay", "temp.aiff"])
 
-# ---- STATE ----
 last_seen = {kw: 0.0 for kw in KEYWORDS}
 
 # ---- CAMERA LOOP ----
@@ -49,7 +45,7 @@ while True:
 
     found_now = set()
     if frame_id % FRAME_SKIP == 0:
-        results = reader.readtext(frame_small)  # [(bbox, text, conf), ...]
+        results = reader.readtext(frame_small)  
 
         for bbox, text, conf in results:
             text_norm = text.strip().lower()
