@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spectacular Ocular Live</title>
+  <style>
+    body { background: #111; color: white; text-align: center; }
+    video, canvas { width: 90%; max-width: 400px; margin-top: 10px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h2>📸 Spectacular Ocular Live</h2>
+  <video id="camera" autoplay playsinline></video>
+  <canvas id="canvas" style="display:none;"></canvas>
+  <p id="status">Starting camera...</p>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
