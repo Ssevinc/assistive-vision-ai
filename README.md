@@ -69,7 +69,7 @@ Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6s
 
 ---
 
-## 🚀 Installation
+## Installation
 ```bash
 # Clone the repo
 git clone https://github.com/Ssevinc/assistive-vision-ai.git
