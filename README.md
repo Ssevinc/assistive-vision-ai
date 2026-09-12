@@ -65,7 +65,7 @@ Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6s
 
 ---
 ## Demo
-
+https://github.com/Ssevinc/assistive-vision-ai/blob/main/demo.mp4
 ## 🚀 Installation
 ```bash
 # Clone the repo
