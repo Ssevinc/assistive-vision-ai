@@ -9,11 +9,7 @@ A real-time object and text detection system built with YOLOv8 to help visually 
 - [Project Structure](#project-structure)
 - [Dataset](#dataset)
 - [Installation](#installation)
-- [Usage](#usage) (tba)
-- [Model Training](#model-training) (tba)
-- [Demo](#demo) (tba)
-- [Roadmap](#roadmap) (tba)
-- [Contributing](#contributing) (tba)
+- [Demo](#demo)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -68,8 +64,9 @@ Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6s
 
 
 ---
+## Demo
 
-## Installation
+## 🚀 Installation
 ```bash
 # Clone the repo
 git clone https://github.com/Ssevinc/assistive-vision-ai.git
