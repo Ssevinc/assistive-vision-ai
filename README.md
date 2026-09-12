@@ -66,9 +66,7 @@ Download link: [dataset-z6sm4](https://universe.roboflow.com/seyyide/dataset-z6s
 ---
 ## Demo
 
-<video width="100%" controls>
-  <source src="demo.mp4" type="video/mp4">
-</video>
+(https://github.com/user-attachments/assets/cda52c49-b57e-4781-bb5f-64143630c917)
 
 ---
 ## 🚀 Installation
