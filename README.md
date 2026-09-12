@@ -6,7 +6,6 @@ A real-time object and text detection system built with YOLOv8 to help visually 
 - [About the Project](#about-the-project)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Dataset](#dataset)
 - [Installation](#installation)
 - [Demo](#demo)
